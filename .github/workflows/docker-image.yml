@@ -62,7 +62,7 @@ jobs:
               const urls = JSON.parse(request.responseText);
               for (const key in urls) { env[key] = urls[key]; }
             }
-          } catch (e) { console.log(e); }" > ./src/env.ts
+          } catch (e) { console.error(e); }" > ./src/env.ts
       - name: Set Docker Hub username
         id: dockerhub-username
         run: echo "username=${DOCKERHUB_REPOSITORY%%/*}" >> $GITHUB_OUTPUT
